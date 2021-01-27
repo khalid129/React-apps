@@ -1,15 +1,19 @@
 import React from 'react';
 import './footer.css';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 function Footer() {
     return (<>
         <div className="footer-basic">
             <footer>
                 <div className="social">
-                    <a href="#"><i className="icon ion-social-instagram"></i></a>
-                    <a href="#"><i className="icon ion-social-snapchat"></i></a>
-                    <a href="#"><i className="icon ion-social-twitter"></i></a>
-                    <a href="#"><i className="icon ion-social-facebook"></i></a>
+                    <a href="#"><YouTubeIcon/></a>
+                    <a href="#"><GitHubIcon/></a>
+                    <a href="#"><TwitterIcon/></a>
+                    <a href="#"><FacebookIcon/></a>
                 </div>
                 <ul className="list-inline">
                     <li className="list-inline-item"><a href="#">Home</a></li>
