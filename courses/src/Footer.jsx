@@ -10,18 +10,18 @@ function Footer() {
         <div className="footer-basic">
             <footer>
                 <div className="social">
-                    <a href="#"><YouTubeIcon/></a>
-                    <a href="#"><GitHubIcon/></a>
-                    <a href="#"><TwitterIcon/></a>
-                    <a href="#"><FacebookIcon/></a>
+                    <a href="https://www.youtube.com/"><YouTubeIcon/></a>
+                    <a href="https://github.com/"><GitHubIcon/></a>
+                    <a href="https://twitter.com/MKhalid_129"><TwitterIcon/></a>
+                    <a href="https://www.facebook.com/"><FacebookIcon/></a>
                 </div>
-                <ul className="list-inline">
+                {/* <ul className="list-inline">
                     <li className="list-inline-item"><a href="#">Home</a></li>
                     <li className="list-inline-item"><a href="#">Services</a></li>
                     <li className="list-inline-item"><a href="#">About</a></li>
                     <li className="list-inline-item"><a href="#">Terms</a></li>
                     <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
-                </ul>
+                </ul> */}
                 <p className="copyright">Company Name © 2018</p>
             </footer>
         </div>

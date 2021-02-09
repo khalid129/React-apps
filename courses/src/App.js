@@ -8,16 +8,15 @@ import Footer from './Footer';
 import './index.css';
 import './card.css';
 
-
-
 function App() {
     return (<>
         <Navbar />
         <h1 className='heading'>Top Courses for Software Engineering 2021</h1>
         <div className='main'>
-            {data.map(function cards(val) {
+            {data.map((val)=> {
                 return (
                     <Cards
+                        key = {val.id}
                         imgscr={val.imgscr}
                         category={val.category}
                         name={val.name}
