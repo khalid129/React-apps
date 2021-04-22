@@ -1,50 +1,61 @@
 import React, {useState} from "react";
 import TodoList from "./TodoList";
 
-const Todo = () => {
+const Todo = ()=>{
 
-    const [itemlist,setItemList] = useState();
-    const [item,setItem] = useState([]);
+    const [inputList,setInputList] = useState("");
+    const [item,setItem]=useState([]); 
 
-    const inputlist = (event)=>{
-        setItemList(event.target.value);
+    const itemEvent = (event)=>{
+        setInputList(event.target.value);
     };
 
-    const addItem = ()=>{
-        setItem((oldarray)=>{
-            return[...oldarray,itemlist];
-        });
-        setItemList(" ");
-    }
+    const listOfItems = ()=>{
+        setItem((oldItems)=>{
+            return [...oldItems,inputList];
+        })
+        setInputList("");
+    };
+
 
     const deleteItems = (id)=>{
-        console.log("deleted");
-        setItem((olditem)=>{
-            olditem.filter((arr,index)=>{
+        setItem((oldItems)=>{
+            return oldItems.filter((arr,index)=>{
                 return index!==id;
-            });
-        });
+            })
+        })
     };
-    return (<>
-        <div className="main_div">
-            <div className="center_div">
-                <h1>Todo List</h1>
-                <div>
-                    <input type="text" name="todo" id="" value={itemlist} onChange={inputlist}/>
-                    <button onClick={addItem}>+</button>
+    return(
+        <>
+            <div className="main_div">
+                <div className="center_div">
+                    <br/>
+                    <h1>
+                        Todo List
+                    </h1>
+                    <br/>
+                    <div className="item_div">
+                    <input type="text" placeholder="Add a item" onChange={itemEvent} value={inputList}/>
+                    <button onClick={listOfItems}>+</button>
+                    </div>
+                    <ol>
+                       {
+                           item.map((itemVal,index)=>{
+                              
+                              return(<TodoList 
+                                   text = {itemVal}
+                                   key = {index}
+                                   id = {index}
+                                   onSelect = {deleteItems}
+                               />); 
+                           })
+                       }
+                   
+                    </ol>
                 </div>
-                <ul>
-                    {
-                        item.map((itemVal,index)=>{
-                            return  <TodoList text={itemVal} id = {index} key={index} onSelect = {deleteItems} />;
-                        })
-                    }
-                </ul>
             </div>
-        </div>
-    </>);
-}
+        </>
+    );
+};
 
 export default Todo;
-
- 

@@ -1,12 +1,18 @@
 import React from "react";
 
-const TodoList = (props)=>{
+const TodoList=(props)=>{
+
+ 
 
     return(
-        <div >
-        <li><i className="fa fa-times style" aria-hidden="true" onClick={()=>{props.onSelect(props.id); }}/>   {props.text} </li>
-        </div>
-    );
-}
+        <>
+            <div className="todo_style">
+            <i className="fa fa-times" onClick={()=>{
+                props.onSelect(props.id)
+            }}></i><li>{props.text}</li>
+            </div>
+        </>
+    )
+};
 
 export default TodoList;
